@@ -27,13 +27,12 @@ class DetailsViewController: UIViewController {
         self.cocktailLabel.text = cocktail.strDrink
         
         let url = URL(string: cocktail.strDrinkThumb)
-        let data = try? Data(contentsOf: url!)
-        thumbnailImageView.image = UIImage(data: data!)
+        if let data = try? Data(contentsOf: url!) {
+            thumbnailImageView.image = UIImage(data: data)
+        }
         
         instructionsTextView.text = cocktail.strInstructions
-        
     }
     
-
 
 }

@@ -23,19 +23,25 @@ class ViewController: UIViewController {
         favouriteCollectionView.delegate = self
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         self.loadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "favDetailsSegue",
+          let vc = segue.destination as? DetailsViewController {
+            vc.cocktail = self.selectedDrink!
+        }
     }
 
     @IBAction func ditTapSearchButton(_ sender: Any) {
         self.performSegue(withIdentifier: "searchPageSegue", sender: nil)
     }
     
-    
 }
 
 
+//MARK: - Private Methods
 extension ViewController {
     
     private func loadData() {
@@ -63,26 +69,15 @@ extension ViewController {
         }
     }
     
-    
     private func reloadView() {
         self.favouriteCollectionView.reloadData()
-    }
-        
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "favDetailsSegue",
-          let vc = segue.destination as? DetailsViewController {
-            vc.cocktail = self.selectedDrink!
-        }
-        
     }
     
 }
 
 
 
-
+//MARK: - UICollectionView Protocol Implimentations
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -95,7 +90,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cocktailCollectionViewCell", for: indexPath as IndexPath) as! CocktailCollectionViewCell
-        cell.thumbnailImage.image = UIImage(named: "thumbnail")
         cell.cellData = dataStore[indexPath.row]
         cell.configureCell()
         return cell
@@ -108,7 +102,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(15)
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedDrink = dataStore[indexPath.row]

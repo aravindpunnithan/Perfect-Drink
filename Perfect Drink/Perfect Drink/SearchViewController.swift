@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     
     private var selectedDrink: Drinks?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -27,19 +28,18 @@ class SearchViewController: UIViewController {
         loadData()
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "searchDetailsSegue",
           let vc = segue.destination as? DetailsViewController {
             vc.cocktail = self.selectedDrink!
         }
-        
     }
-    
     
 }
 
 
+//MARK: - Private Methods
 extension SearchViewController {
     
     private func loadData(searchString: String = "") {
@@ -100,7 +100,7 @@ extension SearchViewController {
 }
 
 
-
+//MARK: - UISearchBarDelegate Implimentation
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -112,7 +112,7 @@ extension SearchViewController: UISearchBarDelegate {
 }
     
 
-
+//MARK: - UICollectionView Protocol Implimentations
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -125,7 +125,6 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cocktailCollectionViewCell", for: indexPath as IndexPath) as! CocktailCollectionViewCell
-        cell.thumbnailImage.image = UIImage(named: "thumbnail")
         cell.cellData = dataStore[indexPath.row]
         cell.configureCell()
         return cell
@@ -136,7 +135,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(15)
+        return CGFloat(20)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
