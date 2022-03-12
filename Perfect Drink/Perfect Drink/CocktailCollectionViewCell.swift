@@ -8,6 +8,10 @@
 import UIKit
 import CoreData
 
+protocol FavouriteCocktailDelegate: AnyObject {
+    func favouriteCocktail(didDeselect drink: Drinks)
+}
+
 class CocktailCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var thumbnailImage: UIImageView!
@@ -17,6 +21,8 @@ class CocktailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cocktailLabel: UILabel!
     
     var cellData: Drinks!
+    
+    var delegate: FavouriteCocktailDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,6 +55,7 @@ extension CocktailCollectionViewCell {
         if favButton.isSelected {
             favButton.isSelected = false
             removeFromDB()
+            self.delegate?.favouriteCocktail(didDeselect: cellData)
         } else {
             favButton.isSelected = true
             addToDB()

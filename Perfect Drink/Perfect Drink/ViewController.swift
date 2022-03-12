@@ -91,6 +91,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cocktailCollectionViewCell", for: indexPath as IndexPath) as! CocktailCollectionViewCell
         cell.cellData = dataStore[indexPath.row]
+        cell.delegate = self
         cell.configureCell()
         return cell
     }
@@ -106,6 +107,17 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedDrink = dataStore[indexPath.row]
         self.performSegue(withIdentifier: "favDetailsSegue", sender: nil)
+    }
+    
+}
+
+
+
+//MARK: - FavouriteCocktailDelegate Implimentations
+extension ViewController: FavouriteCocktailDelegate {
+    
+    func favouriteCocktail(didDeselect drink: Drinks) {
+        self.loadData()
     }
     
 }
