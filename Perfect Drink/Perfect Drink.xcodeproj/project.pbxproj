@@ -20,6 +20,7 @@
 		8A0C8B4527DC6EEE00794A0F /* CocktailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C8B4327DC6EEE00794A0F /* CocktailCollectionViewCell.xib */; };
 		8A0C8B4727DCA38500794A0F /* DrinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C8B4627DCA38500794A0F /* DrinksModel.swift */; };
 		8A0C8B4927DCBBA100794A0F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C8B4827DCBBA100794A0F /* DetailsViewController.swift */; };
+		8AB3D0E227DD2895002E0613 /* UIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3D0E127DD2895002E0613 /* UIUtility.swift */; };
 		8AE5F73527DCC4FC009D0903 /* DrinksEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5F73327DCC4FC009D0903 /* DrinksEntity+CoreDataClass.swift */; };
 		8AE5F73627DCC4FC009D0903 /* DrinksEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5F73427DCC4FC009D0903 /* DrinksEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		8A0C8B4327DC6EEE00794A0F /* CocktailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CocktailCollectionViewCell.xib; sourceTree = "<group>"; };
 		8A0C8B4627DCA38500794A0F /* DrinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksModel.swift; sourceTree = "<group>"; };
 		8A0C8B4827DCBBA100794A0F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		8AB3D0E127DD2895002E0613 /* UIUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtility.swift; sourceTree = "<group>"; };
 		8AE5F73327DCC4FC009D0903 /* DrinksEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8AE5F73427DCC4FC009D0903 /* DrinksEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F4F2040DFCC746CCE590E372 /* Pods-Perfect Drink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Perfect Drink.release.xcconfig"; path = "Target Support Files/Pods-Perfect Drink/Pods-Perfect Drink.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				8A0C8B3327DC626800794A0F /* Assets.xcassets */,
 				8A0C8B3527DC626800794A0F /* LaunchScreen.storyboard */,
 				8A0C8B3827DC626800794A0F /* Info.plist */,
+				8AB3D0E127DD2895002E0613 /* UIUtility.swift */,
 			);
 			path = "Perfect Drink";
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				8AE5F73527DCC4FC009D0903 /* DrinksEntity+CoreDataClass.swift in Sources */,
 				8A0C8B2C27DC626600794A0F /* ViewController.swift in Sources */,
 				8AE5F73627DCC4FC009D0903 /* DrinksEntity+CoreDataProperties.swift in Sources */,
+				8AB3D0E227DD2895002E0613 /* UIUtility.swift in Sources */,
 				8A0C8B2827DC626600794A0F /* AppDelegate.swift in Sources */,
 				8A0C8B4927DCBBA100794A0F /* DetailsViewController.swift in Sources */,
 				8A0C8B3227DC626600794A0F /* Perfect_Drink.xcdatamodeld in Sources */,

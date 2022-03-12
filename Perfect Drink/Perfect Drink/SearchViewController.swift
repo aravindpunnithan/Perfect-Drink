@@ -18,6 +18,9 @@ class SearchViewController: UIViewController {
     
     private var selectedDrink: Drinks?
     
+    private var loadingLabel: UILabel = UILabel()
+    
+    private var noItemLabel: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,8 @@ class SearchViewController: UIViewController {
         cocktailsCollectionView.register(UINib(nibName: "CocktailCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "cocktailCollectionViewCell")
         cocktailsCollectionView.dataSource = self
         cocktailsCollectionView.delegate = self
+        loadingLabel = UIUtility().getLabel(with: "Loading...", font: UIFont.systemFont(ofSize: 15))
+        noItemLabel = UIUtility().getLabel(with: "No drinks found.", font: UIFont.systemFont(ofSize: 15))
         loadData()
     }
     
@@ -42,16 +47,24 @@ class SearchViewController: UIViewController {
 //MARK: - Private Methods
 extension SearchViewController {
     
+    
     private func loadData(searchString: String = "") {
+        let formattedSearchString = searchString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
         var apiToContact = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s"
         
         if searchString != "" {
-            apiToContact = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s" + "=" + searchString
+            apiToContact = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s" + "=" + formattedSearchString!
         }
+        
+        setLoadingLabel()
         
         let request = AF.request(apiToContact)
         
         request.responseJSON() { response in
+            
+            self.loadingLabel.removeFromSuperview()
+            
             guard let data = response.data else {
                 return
             }
@@ -60,8 +73,12 @@ extension SearchViewController {
                 
                 if decodedData.drinks?.count ?? 0 > 0 {
                     self.dataStore = decodedData.drinks!
-                    self.reloadView()
+                } else {
+                    self.dataStore = []
                 }
+                
+                self.reloadView()
+                
             } catch {
                 print("Decode Failed")
             }
@@ -71,6 +88,31 @@ extension SearchViewController {
     
     private func reloadView() {
         self.cocktailsCollectionView.reloadData()
+        
+        if dataStore.count == 0 {
+            setNoDrinksFoundLabel()
+        } else {
+            self.noItemLabel.removeFromSuperview()
+        }
+    }
+    
+    
+    private func setLoadingLabel() {
+        self.view.addSubview(loadingLabel)
+        loadingLabel.backgroundColor = .clear
+        loadingLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0).isActive = true
+        loadingLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive = true
+        loadingLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        loadingLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+    }
+    
+    private func setNoDrinksFoundLabel() {
+        self.view.addSubview(noItemLabel)
+        noItemLabel.backgroundColor = .clear
+        noItemLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0).isActive = true
+        noItemLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive = true
+        noItemLabel.widthAnchor.constraint(equalToConstant: 125).isActive = true
+        noItemLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
     
