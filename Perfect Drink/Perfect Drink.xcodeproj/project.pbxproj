@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EBEC607D6BF17624D09D67B /* Pods_Perfect_Drink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F0FFEEA639E40F53C7F712 /* Pods_Perfect_Drink.framework */; };
 		8A0C8B2827DC626600794A0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C8B2727DC626600794A0F /* AppDelegate.swift */; };
 		8A0C8B2A27DC626600794A0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C8B2927DC626600794A0F /* SceneDelegate.swift */; };
 		8A0C8B2C27DC626600794A0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C8B2B27DC626600794A0F /* ViewController.swift */; };
@@ -14,9 +15,18 @@
 		8A0C8B3227DC626600794A0F /* Perfect_Drink.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C8B3027DC626600794A0F /* Perfect_Drink.xcdatamodeld */; };
 		8A0C8B3427DC626800794A0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C8B3327DC626800794A0F /* Assets.xcassets */; };
 		8A0C8B3727DC626800794A0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C8B3527DC626800794A0F /* LaunchScreen.storyboard */; };
+		8A0C8B3F27DC686B00794A0F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C8B3E27DC686B00794A0F /* SearchViewController.swift */; };
+		8A0C8B4427DC6EEE00794A0F /* CocktailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C8B4227DC6EEE00794A0F /* CocktailCollectionViewCell.swift */; };
+		8A0C8B4527DC6EEE00794A0F /* CocktailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0C8B4327DC6EEE00794A0F /* CocktailCollectionViewCell.xib */; };
+		8A0C8B4727DCA38500794A0F /* DrinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C8B4627DCA38500794A0F /* DrinksModel.swift */; };
+		8A0C8B4927DCBBA100794A0F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C8B4827DCBBA100794A0F /* DetailsViewController.swift */; };
+		8AE5F73527DCC4FC009D0903 /* DrinksEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5F73327DCC4FC009D0903 /* DrinksEntity+CoreDataClass.swift */; };
+		8AE5F73627DCC4FC009D0903 /* DrinksEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5F73427DCC4FC009D0903 /* DrinksEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21F0FFEEA639E40F53C7F712 /* Pods_Perfect_Drink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Perfect_Drink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8743B682222BF1D3B2C70E0A /* Pods-Perfect Drink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Perfect Drink.debug.xcconfig"; path = "Target Support Files/Pods-Perfect Drink/Pods-Perfect Drink.debug.xcconfig"; sourceTree = "<group>"; };
 		8A0C8B2427DC626600794A0F /* Perfect Drink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Perfect Drink.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0C8B2727DC626600794A0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A0C8B2927DC626600794A0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +36,14 @@
 		8A0C8B3327DC626800794A0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A0C8B3627DC626800794A0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A0C8B3827DC626800794A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A0C8B3E27DC686B00794A0F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8A0C8B4227DC6EEE00794A0F /* CocktailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCollectionViewCell.swift; sourceTree = "<group>"; };
+		8A0C8B4327DC6EEE00794A0F /* CocktailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CocktailCollectionViewCell.xib; sourceTree = "<group>"; };
+		8A0C8B4627DCA38500794A0F /* DrinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksModel.swift; sourceTree = "<group>"; };
+		8A0C8B4827DCBBA100794A0F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		8AE5F73327DCC4FC009D0903 /* DrinksEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8AE5F73427DCC4FC009D0903 /* DrinksEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinksEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4F2040DFCC746CCE590E372 /* Pods-Perfect Drink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Perfect Drink.release.xcconfig"; path = "Target Support Files/Pods-Perfect Drink/Pods-Perfect Drink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBEC607D6BF17624D09D67B /* Pods_Perfect_Drink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F4CC4C2932DDE33BD44978F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21F0FFEEA639E40F53C7F712 /* Pods_Perfect_Drink.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8A0C8B1B27DC626600794A0F = {
 			isa = PBXGroup;
 			children = (
 				8A0C8B2627DC626600794A0F /* Perfect Drink */,
 				8A0C8B2527DC626600794A0F /* Products */,
+				B59E64546B05800E796BC741 /* Pods */,
+				6F4CC4C2932DDE33BD44978F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,13 +90,37 @@
 				8A0C8B2727DC626600794A0F /* AppDelegate.swift */,
 				8A0C8B2927DC626600794A0F /* SceneDelegate.swift */,
 				8A0C8B2B27DC626600794A0F /* ViewController.swift */,
+				8A0C8B3E27DC686B00794A0F /* SearchViewController.swift */,
+				8A0C8B4827DCBBA100794A0F /* DetailsViewController.swift */,
+				8A0C8B4227DC6EEE00794A0F /* CocktailCollectionViewCell.swift */,
+				8A0C8B4627DCA38500794A0F /* DrinksModel.swift */,
+				8A0C8B4327DC6EEE00794A0F /* CocktailCollectionViewCell.xib */,
 				8A0C8B2D27DC626600794A0F /* Main.storyboard */,
+				8A0C8B3027DC626600794A0F /* Perfect_Drink.xcdatamodeld */,
+				8A0C8B4A27DCC13700794A0F /* Model */,
 				8A0C8B3327DC626800794A0F /* Assets.xcassets */,
 				8A0C8B3527DC626800794A0F /* LaunchScreen.storyboard */,
 				8A0C8B3827DC626800794A0F /* Info.plist */,
-				8A0C8B3027DC626600794A0F /* Perfect_Drink.xcdatamodeld */,
 			);
 			path = "Perfect Drink";
+			sourceTree = "<group>";
+		};
+		8A0C8B4A27DCC13700794A0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8AE5F73327DCC4FC009D0903 /* DrinksEntity+CoreDataClass.swift */,
+				8AE5F73427DCC4FC009D0903 /* DrinksEntity+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B59E64546B05800E796BC741 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8743B682222BF1D3B2C70E0A /* Pods-Perfect Drink.debug.xcconfig */,
+				F4F2040DFCC746CCE590E372 /* Pods-Perfect Drink.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A0C8B3B27DC626800794A0F /* Build configuration list for PBXNativeTarget "Perfect Drink" */;
 			buildPhases = (
+				C97E887A13DD6D99634F03FD /* [CP] Check Pods Manifest.lock */,
 				8A0C8B2027DC626600794A0F /* Sources */,
 				8A0C8B2127DC626600794A0F /* Frameworks */,
 				8A0C8B2227DC626600794A0F /* Resources */,
+				9487DE8664BC3132359990F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0C8B4527DC6EEE00794A0F /* CocktailCollectionViewCell.xib in Resources */,
 				8A0C8B3727DC626800794A0F /* LaunchScreen.storyboard in Resources */,
 				8A0C8B3427DC626800794A0F /* Assets.xcassets in Resources */,
 				8A0C8B2F27DC626600794A0F /* Main.storyboard in Resources */,
@@ -136,15 +192,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9487DE8664BC3132359990F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Perfect Drink/Pods-Perfect Drink-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Perfect Drink/Pods-Perfect Drink-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Perfect Drink/Pods-Perfect Drink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C97E887A13DD6D99634F03FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Perfect Drink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A0C8B2027DC626600794A0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A0C8B3F27DC686B00794A0F /* SearchViewController.swift in Sources */,
+				8AE5F73527DCC4FC009D0903 /* DrinksEntity+CoreDataClass.swift in Sources */,
 				8A0C8B2C27DC626600794A0F /* ViewController.swift in Sources */,
+				8AE5F73627DCC4FC009D0903 /* DrinksEntity+CoreDataProperties.swift in Sources */,
 				8A0C8B2827DC626600794A0F /* AppDelegate.swift in Sources */,
+				8A0C8B4927DCBBA100794A0F /* DetailsViewController.swift in Sources */,
 				8A0C8B3227DC626600794A0F /* Perfect_Drink.xcdatamodeld in Sources */,
+				8A0C8B4427DC6EEE00794A0F /* CocktailCollectionViewCell.swift in Sources */,
 				8A0C8B2A27DC626600794A0F /* SceneDelegate.swift in Sources */,
+				8A0C8B4727DCA38500794A0F /* DrinksModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +392,7 @@
 		};
 		8A0C8B3C27DC626800794A0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8743B682222BF1D3B2C70E0A /* Pods-Perfect Drink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -316,6 +421,7 @@
 		};
 		8A0C8B3D27DC626800794A0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F2040DFCC746CCE590E372 /* Pods-Perfect Drink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
