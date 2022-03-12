@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     private var dataStore: [Drinks] = []
     
+    private var selectedDrink: Drinks?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         favouriteCollectionView.register(UINib(nibName: "CocktailCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "cocktailCollectionViewCell")
@@ -30,19 +32,6 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "searchPageSegue", sender: nil)
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-//        if segue.identifier == "detailsSegue",
-//          let indexPath = sender as? IndexPath,
-//          let vc = segue.destination as? ShowDetailsViewController{
-//
-//
-//
-//
-//        }
-        
-    }
     
 }
 
@@ -77,6 +66,16 @@ extension ViewController {
     private func reloadView() {
         self.favouriteCollectionView.reloadData()
     }
+        
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "favDetailsSegue",
+          let vc = segue.destination as? DetailsViewController {
+            vc.cocktail = self.selectedDrink!
+        }
+        
+    }
     
 }
 
@@ -106,7 +105,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(3)
+        return CGFloat(15)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedDrink = dataStore[indexPath.row]
+        self.performSegue(withIdentifier: "favDetailsSegue", sender: nil)
     }
     
 }

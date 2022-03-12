@@ -16,6 +16,8 @@ class SearchViewController: UIViewController {
     
     private var dataStore: [Drinks] = []
     
+    private var selectedDrink: Drinks?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -25,6 +27,15 @@ class SearchViewController: UIViewController {
         loadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "searchDetailsSegue",
+          let vc = segue.destination as? DetailsViewController {
+            vc.cocktail = self.selectedDrink!
+        }
+        
+    }
+    
     
 }
 
@@ -32,7 +43,6 @@ class SearchViewController: UIViewController {
 extension SearchViewController {
     
     private func loadData(searchString: String = "") {
-        
         var apiToContact = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s"
         
         if searchString != "" {
@@ -58,9 +68,34 @@ extension SearchViewController {
         }
     }
     
+    
     private func reloadView() {
         self.cocktailsCollectionView.reloadData()
     }
+    
+    
+    private func loadDrinkDetils(id: String) {
+        let apiToContact = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i" + "=" + id
+        
+        let request = AF.request(apiToContact)
+        
+        request.responseJSON() { response in
+            guard let data = response.data else {
+                return
+            }
+            do {
+                let decodedData = try JSONDecoder().decode(DrinksBase.self, from: data)
+                
+                if let drink = decodedData.drinks?.first {
+                    self.selectedDrink = drink
+                    self.performSegue(withIdentifier: "searchDetailsSegue", sender: nil)
+                }
+            } catch {
+                print("Decode Failed")
+            }
+        }
+    }
+    
     
 }
 
@@ -101,7 +136,11 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(3)
+        return CGFloat(15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.loadDrinkDetils(id: dataStore[indexPath.row].idDrink)
     }
     
 }

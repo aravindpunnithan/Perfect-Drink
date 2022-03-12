@@ -28,6 +28,12 @@ class CocktailCollectionViewCell: UICollectionViewCell {
 extension CocktailCollectionViewCell {
     
     func configureCell() {
+        let margins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        contentView.frame = contentView.frame.inset(by: margins)
+        contentView.layer.cornerRadius = 5
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.gray.cgColor
+        
         self.cocktailLabel.text = cellData.strDrink
         
         let url = URL(string: cellData.strDrinkThumb)
