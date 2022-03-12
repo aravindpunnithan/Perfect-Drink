@@ -16,11 +16,14 @@ class ViewController: UIViewController {
     
     private var selectedDrink: Drinks?
     
+    private var noItemLabel: UILabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         favouriteCollectionView.register(UINib(nibName: "CocktailCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "cocktailCollectionViewCell")
         favouriteCollectionView.dataSource = self
         favouriteCollectionView.delegate = self
+        noItemLabel = UIUtility().getLabel(with: "You haven't added any favourite drinks.", font: UIFont.systemFont(ofSize: 15))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +74,21 @@ extension ViewController {
     
     private func reloadView() {
         self.favouriteCollectionView.reloadData()
+        
+        if dataStore.count == 0 {
+            setNoFavLabel()
+        } else {
+            self.noItemLabel.removeFromSuperview()
+        }
+    }
+    
+    private func setNoFavLabel() {
+        self.view.addSubview(noItemLabel)
+        noItemLabel.backgroundColor = .clear
+        noItemLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0).isActive = true
+        noItemLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive = true
+        noItemLabel.widthAnchor.constraint(equalToConstant: 280).isActive = true
+        noItemLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
 }
