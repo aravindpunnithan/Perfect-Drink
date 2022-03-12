@@ -45,7 +45,6 @@ extension ViewController {
         let request: NSFetchRequest<DrinksEntity> = DrinksEntity.fetchRequest()
 
         do {
-//            request.predicate = NSPredicate(format: "idDrink == \(cellData.idDrink)")
             let entities =  try context?.fetch(request)
             
             if entities?.count ?? 0 > 0 {
@@ -53,9 +52,11 @@ extension ViewController {
                                                         strDrink: $0.strDrink ?? "",
                                                         strDrinkThumb: $0.strDrinkThumb ?? "",
                                                         strInstructions: $0.strInstructions ?? "") }
-                self.reloadView()
+            } else {
+                self.dataStore = []
             }
             
+            self.reloadView()
             
         } catch let error {
             print(error)

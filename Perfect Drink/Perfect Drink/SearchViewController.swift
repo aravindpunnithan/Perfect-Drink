@@ -74,27 +74,27 @@ extension SearchViewController {
     }
     
     
-    private func loadDrinkDetils(id: String) {
-        let apiToContact = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i" + "=" + id
-        
-        let request = AF.request(apiToContact)
-        
-        request.responseJSON() { response in
-            guard let data = response.data else {
-                return
-            }
-            do {
-                let decodedData = try JSONDecoder().decode(DrinksBase.self, from: data)
-                
-                if let drink = decodedData.drinks?.first {
-                    self.selectedDrink = drink
-                    self.performSegue(withIdentifier: "searchDetailsSegue", sender: nil)
-                }
-            } catch {
-                print("Decode Failed")
-            }
-        }
-    }
+//    private func loadDrinkDetils(id: String) {
+//        let apiToContact = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i" + "=" + id
+//
+//        let request = AF.request(apiToContact)
+//
+//        request.responseJSON() { response in
+//            guard let data = response.data else {
+//                return
+//            }
+//            do {
+//                let decodedData = try JSONDecoder().decode(DrinksBase.self, from: data)
+//
+//                if let drink = decodedData.drinks?.first {
+//                    self.selectedDrink = drink
+//                    self.performSegue(withIdentifier: "searchDetailsSegue", sender: nil)
+//                }
+//            } catch {
+//                print("Decode Failed")
+//            }
+//        }
+//    }
     
     
 }
@@ -140,7 +140,9 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.loadDrinkDetils(id: dataStore[indexPath.row].idDrink)
+//        self.loadDrinkDetils(id: dataStore[indexPath.row].idDrink)
+        self.selectedDrink = dataStore[indexPath.row]
+        self.performSegue(withIdentifier: "searchDetailsSegue", sender: nil)
     }
     
 }
