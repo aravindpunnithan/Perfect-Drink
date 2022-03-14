@@ -89,21 +89,15 @@
 		8A0C8B2627DC626600794A0F /* Perfect Drink */ = {
 			isa = PBXGroup;
 			children = (
-				8A0C8B2727DC626600794A0F /* AppDelegate.swift */,
-				8A0C8B2927DC626600794A0F /* SceneDelegate.swift */,
-				8A0C8B2B27DC626600794A0F /* ViewController.swift */,
-				8A0C8B3E27DC686B00794A0F /* SearchViewController.swift */,
-				8A0C8B4827DCBBA100794A0F /* DetailsViewController.swift */,
-				8A0C8B4627DCA38500794A0F /* DrinksModel.swift */,
-				8A0C8B4227DC6EEE00794A0F /* CocktailCollectionViewCell.swift */,
-				8A0C8B4327DC6EEE00794A0F /* CocktailCollectionViewCell.xib */,
-				8A0C8B2D27DC626600794A0F /* Main.storyboard */,
-				8A0C8B3027DC626600794A0F /* Perfect_Drink.xcdatamodeld */,
 				8A0C8B4A27DCC13700794A0F /* Model */,
+				8AD5A3DD27DF28A4009C1C2A /* Views */,
+				8AD5A3DE27DF28B0009C1C2A /* Controllers */,
+				8AD5A3E027DF2914009C1C2A /* Utility */,
+				8AD5A3DF27DF28C4009C1C2A /* Delegates */,
+				8A0C8B3027DC626600794A0F /* Perfect_Drink.xcdatamodeld */,
 				8A0C8B3327DC626800794A0F /* Assets.xcassets */,
 				8A0C8B3527DC626800794A0F /* LaunchScreen.storyboard */,
 				8A0C8B3827DC626800794A0F /* Info.plist */,
-				8AB3D0E127DD2895002E0613 /* UIUtility.swift */,
 			);
 			path = "Perfect Drink";
 			sourceTree = "<group>";
@@ -111,10 +105,48 @@
 		8A0C8B4A27DCC13700794A0F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8A0C8B4627DCA38500794A0F /* DrinksModel.swift */,
 				8AE5F73327DCC4FC009D0903 /* DrinksEntity+CoreDataClass.swift */,
 				8AE5F73427DCC4FC009D0903 /* DrinksEntity+CoreDataProperties.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8AD5A3DD27DF28A4009C1C2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A0C8B4227DC6EEE00794A0F /* CocktailCollectionViewCell.swift */,
+				8A0C8B4327DC6EEE00794A0F /* CocktailCollectionViewCell.xib */,
+				8A0C8B2D27DC626600794A0F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8AD5A3DE27DF28B0009C1C2A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A0C8B2B27DC626600794A0F /* ViewController.swift */,
+				8A0C8B3E27DC686B00794A0F /* SearchViewController.swift */,
+				8A0C8B4827DCBBA100794A0F /* DetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8AD5A3DF27DF28C4009C1C2A /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8A0C8B2727DC626600794A0F /* AppDelegate.swift */,
+				8A0C8B2927DC626600794A0F /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		8AD5A3E027DF2914009C1C2A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3D0E127DD2895002E0613 /* UIUtility.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		B59E64546B05800E796BC741 /* Pods */ = {
